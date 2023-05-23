@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#contenedor-productos{
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedorPrincipal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+.nombreProduct{
+    width: 50%;
+    height: 50px;
+    border-radius: 20px;
+    margin-left: 25%;
+    margin-top: 30px;
+    background-color: rgb(30, 159, 210);
+    text-align: center;
+    
+}
+
+.precioProduct{
+    width: 50%;
+    height: 50px;
+    margin-left: 25%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.btn-compra{
+    width: 10%;
+    height: 30px;
+    border-radius: 20px;
+    margin-left: 45%;
+}
+
+.carrito2{
+    font-size: 50px;
+    
+}
+
+.contenedor-carrito{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.final{
+    margin-top: 200px;
+}
