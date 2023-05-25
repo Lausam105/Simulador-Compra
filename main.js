@@ -66,19 +66,19 @@ function agregarAlCarrito(id){
         
         total = carrito.reduce((tot, elem) => tot + elem.precio, 0);
         contenidoCarrito.innerHTML = `
-                                      <h3 class="carrito">Total: ${total}</h3>
+                                      <h3 class="carrito">Total: $${total}</h3>
                                       <h5 class="cantidad">${cantidad} productos en el carrito</h5>`;
         contenedorCarrito.appendChild(contenidoCarrito);
         
 
-        /*localStorage.setItem("product", JSON.stringify(total));
+        localStorage.setItem("product", JSON.stringify(total));
         localStorage.setItem("cantid", JSON.stringify(cantidad));
    
         let totalProduct = localStorage.getItem("product");
         let cantProduct = localStorage.getItem("cantid");
 
         console.log(totalProduct);
-        console.log(cantProduct);*/
+        console.log(cantProduct);
 
      
         
@@ -98,17 +98,17 @@ function eliminarProductos (){
 eliminarProductos();
 
 let total = "";
+let clave = "";
 
 
 
 
 
-
-/*for(let i=0; i < localStorage.length; i++){
-        let clave = localStorage.key(i);
+for(let i=0; i < localStorage.length; i++){
+        clave = localStorage.key(i);
         console.log("Clave: " + clave);
         console.log("Valor: " + localStorage.getItem(clave));
-}*/
+}
 
 
 
