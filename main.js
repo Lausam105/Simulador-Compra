@@ -47,7 +47,7 @@ const mostrarProductos = (data) => {
 mostrarProductos(productos);
 
 const carrito = [];
-let total = "";
+
 
 const contenedorCarrito = document.querySelector('#contenedor-carrito');
         const contenidoCarrito = document.createElement('div');
@@ -62,31 +62,53 @@ function agregarAlCarrito(id){
    
         let prodEncontrado = productos.find(prod => prod.id === parseInt(id));
         carrito.push(prodEncontrado);
-        const cantidad = carrito.length;
-        console.log(cantidad);
+        let cantidad = carrito.length;
+        
         total = carrito.reduce((tot, elem) => tot + elem.precio, 0);
         contenidoCarrito.innerHTML = `
                                       <h3 class="carrito">Total: ${total}</h3>
                                       <h5 class="cantidad">${cantidad} productos en el carrito</h5>`;
         contenedorCarrito.appendChild(contenidoCarrito);
-        console.log(total);
+        
 
-        localStorage.setItem("product", JSON.stringify(total));
+        /*localStorage.setItem("product", JSON.stringify(total));
         localStorage.setItem("cantid", JSON.stringify(cantidad));
-        total = localStorage.getItem("product");
-        cantidad = localStorage.getItem("cantid");
+   
+        let totalProduct = localStorage.getItem("product");
+        let cantProduct = localStorage.getItem("cantid");
 
-        contenedorCarrito.appendChild(total);
-        contenedorCarrito.appendChild(cantidad);
-        
-        
+        console.log(totalProduct);
+        console.log(cantProduct);*/
+
+     
         
 }
 
-const elimin = document.querySelector('.btn-cancelar');
-elimin.addEventListener("click", () =>{
-        total.remove();
-})
+function eliminarProductos (){
+        let elimin = document.querySelector('.btn-cancelar');
+        elimin.addEventListener("click", () =>{
+         let eliminado = document.querySelector('.carrito');
+         eliminado.remove();
+         let eliminado2 = document.querySelector('.cantidad');
+         eliminado2.remove();
+         carrito.length = 0;
+        })
+}
+
+eliminarProductos();
+
+let total = "";
+
+
+
+
+
+
+/*for(let i=0; i < localStorage.length; i++){
+        let clave = localStorage.key(i);
+        console.log("Clave: " + clave);
+        console.log("Valor: " + localStorage.getItem(clave));
+}*/
 
 
 
